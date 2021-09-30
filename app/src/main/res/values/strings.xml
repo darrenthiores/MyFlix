@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyFlix</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="content_des">myFlix Logo</string>
+    <string name="myflix_logo">myFlix Logo</string>
+    <string name="up_button">Up Button</string>
+    <string name="release_date">Release Date</string>
+    <string name="rating">Rating</string>
+    <string name="voter">Voter</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="no_result_animation">No Result Animation</string>
+</resources>
