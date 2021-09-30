@@ -1,5 +1,6 @@
 package com.icebeal.core.di
 
+import android.os.Build
 import androidx.room.Room
 import com.icebeal.core.BuildConfig
 import com.icebeal.core.data.local.LocalDataSource
@@ -45,19 +46,26 @@ val networkModule = module {
 
     single {
 
-        val hostName = BuildConfig.BASE_URL
-        val certificatePinner = CertificatePinner.Builder()
-            .add(hostName, "sha256/+vqZVAzTqUP8BGkfl88yU7SQ3C8J2uNEa55B7RZjEg0=")
-            .add(hostName, "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=")
-            .add(hostName, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
-            .build()
-
-        OkHttpClient.Builder()
+        val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
-            .certificatePinner(certificatePinner)
-            .build()
+
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.N){
+
+            val hostName = BuildConfig.BASE_URL
+            val certificatePinner = CertificatePinner.Builder()
+                .add(hostName, "sha256/+vqZVAzTqUP8BGkfl88yU7SQ3C8J2uNEa55B7RZjEg0=")
+                .add(hostName, "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=")
+                .add(hostName, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
+                .build()
+
+            okHttpClient.certificatePinner(certificatePinner)
+
+        }
+
+        okHttpClient.build()
+
     }
 
     single {
