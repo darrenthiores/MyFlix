@@ -11,4 +11,6 @@
     <string name="no_result_animation">No Result Animation</string>
     <string name="add">%s Added To Favorite</string>
     <string name="remove">%s Removed From Favorite</string>
+    <string name="tab_1">Home</string>
+    <string name="tab_2">Favorite</string>
 </resources>

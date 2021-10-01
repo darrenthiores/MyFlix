@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         binding?.tabLayout?.let {
 
-            it.addTab(it.newTab().setText("Home"))
-            it.addTab(it.newTab().setText("Favorite"))
+            it.addTab(it.newTab().setText(getString(R.string.tab_1)))
+            it.addTab(it.newTab().setText(getString(R.string.tab_2)))
 
             it.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
