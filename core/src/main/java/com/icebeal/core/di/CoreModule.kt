@@ -51,7 +51,7 @@ val networkModule = module {
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
 
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
 
             val hostName = BuildConfig.BASE_URL
             val certificatePinner = CertificatePinner.Builder()
