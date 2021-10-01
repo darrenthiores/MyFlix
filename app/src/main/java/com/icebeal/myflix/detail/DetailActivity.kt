@@ -74,10 +74,18 @@ class DetailActivity : AppCompatActivity() {
                     detailViewModel.setMovieFavorite(movie, isFav)
                     setFavoriteButton(isFav)
 
-                    if(isFav){
-                        Toast.makeText(this@DetailActivity, "${movie.title} Added To Favorite!!", Toast.LENGTH_SHORT).show()
+                    if (isFav) {
+                        Toast.makeText(
+                            this@DetailActivity,
+                            getString(R.string.add, movie.title),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     } else {
-                        Toast.makeText(this@DetailActivity, "${movie.title} Removed From Favorite!!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this@DetailActivity,
+                            getString(R.string.remove, movie.title),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
 
                 }

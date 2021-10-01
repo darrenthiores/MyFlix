@@ -23,7 +23,7 @@ class HomeFragment : Fragment(), OnClickCallback {
     private val binding get() = _binding
 
     private val homeViewModel: HomeViewModel by inject()
-    private var movieAdapter : MovieAdapter? = MovieAdapter(this)
+    private var movieAdapter: MovieAdapter? = MovieAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -126,7 +126,7 @@ class HomeFragment : Fragment(), OnClickCallback {
 
     }
 
-    private fun showAnimation(movie:List<Movie>){
+    private fun showAnimation(movie: List<Movie>) {
 
         if (movie.isEmpty()) {
 

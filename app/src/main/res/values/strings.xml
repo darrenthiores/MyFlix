@@ -9,4 +9,6 @@
     <string name="voter">Voter</string>
     <string name="favorite_button">Favorite Button</string>
     <string name="no_result_animation">No Result Animation</string>
+    <string name="add">%s Added To Favorite</string>
+    <string name="remove">%s Removed From Favorite</string>
 </resources>

@@ -1,11 +1,11 @@
 package com.icebeal.core.data.remote
 
-import android.util.Log
 import com.icebeal.core.model.data.response.MovieResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 import java.lang.Exception
 
 class RemoteDataSource(private val apiService: ApiService) {
@@ -30,7 +30,7 @@ class RemoteDataSource(private val apiService: ApiService) {
         } catch (e: Exception) {
 
             emit(ApiResponse.Error(e.toString()))
-            Log.e("RemoteDataSource", e.toString())
+            Timber.e(e.toString())
 
         }
 
